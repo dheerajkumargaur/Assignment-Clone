@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+        *{
+            background-color: #2e3035;
+        }
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+             align-items: center; 
+            justify-content:space-around; 
+             
+        }
+        iframe{
+            margin-bottom: 2%; 
+            height: 20rem;
+        }
+    </style>
+</head>
+<body>
+    <div id = "container"></div>
+</body>
+<script>
+    var cont = document.getElementById("container")
+        let key = "AIzaSyBxUmZ1qHHT1PnuvKBDftJRUSi5cV3I-Tw"
+    let url =`https://youtube.googleapis.com/v3/videos?key=${key}&part=snippet&chart=mostPopular&maxResults=50&regionCode=IN`
+   
+    async function check() {
+            let res = await fetch(url);
+            let data = await res.json();
+            var ans = data.items
+            ans.forEach(element => {
+                console.log(element)
+                show(element.id)
+            });
+        }
+        
+        function show(user){
+            var frame = document.createElement("iframe")
+            frame.src = `https://youtube.com/embed/${user}`
+            cont.appendChild(frame)
+        }
+        check()
+</script>
+</html>

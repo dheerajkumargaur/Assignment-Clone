@@ -1,0 +1,206 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    background: transparent;
+}
+
+.navbar {
+    width: 100%;
+    height:auto;
+    display:flex;
+    position: sticky;
+    flex-wrap: wrap;
+    z-index: 999;
+    justify-content:space-around;
+    background: transparent;
+    transition: all 0.3s ease;
+}
+#searchbar > #movies {
+  height: auto;
+  display:block;
+  overflow:hidden;
+  
+  color: #fff;
+  background: -webkit-linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 100%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');
+  background: -o-linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 100%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');
+  background: -moz-linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 100%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');
+  background: linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 100%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');
+background-size: cover;
+background-position: 50% 21%;
+}
+.background {
+  position:sticky;
+}
+
+.logo {
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+}
+.newpost {
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+    font-size: 16px;
+    padding: 0 15px ;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #01b96b;
+}
+
+.final {
+    color: #555;
+    display: flex;
+    width:450px;
+    border: 1px solid currentColor;
+    border-radius: 5px;
+    margin-top:10px;
+  }
+  
+  input[type="search"] {
+    border: none;
+    background: transparent;
+    margin: 0;
+    width:400px;
+    padding: 7px 8px;
+    font-size: 14px;
+    color: inherit;
+    border-radius: inherit;
+  }
+  
+  button[type="submit"] {
+    text-indent: -999px;
+    overflow: hidden;
+    width: 50px;
+    border: 1px solid transparent;
+    border-radius: inherit;
+    background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat center;
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  button[type="submit"]:hover {
+    opacity: 1;
+  }
+  
+  button[type="submit"]:focus,
+  input[type="search"]:focus {
+    box-shadow: 0 0 3px 0 #1183d6;
+    border-color: #1183d6;
+    outline: none;
+  }
+
+ .comment {
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+ }
+ 
+ .login {
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+    font-size: 16px;
+    padding: 0 10px ;
+    border-radius: 5px;
+    background: transparent;
+ }
+ .signup {
+    cursor: pointer;
+    height: 40px;
+    margin: 10px;
+    font-size: 16px;
+    padding: 0 15px ;
+    margin-left: -80PX;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #01b96b;
+ }
+ .centered {
+    position: absolute;
+    color: #fff;
+    font-weight: 3000px;
+    font-size: 27px;
+    top: 40%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+  }
+  .left {
+    position: absolute;
+    color: #fff;
+    font-weight: 3000px;
+    font-size: 26px;
+    top: 45%;
+    left: 6%;
+  }
+  .right {
+    position: absolute;
+    color: #fff;
+    font-weight: 3000px;
+    font-size: 26px;
+    top: 45%;
+    right: 7%;
+  }
+  .trending {
+    position: absolute;
+    top: 50%;
+    left: 6%;
+  }
+  .trending img {
+    height: 150px;
+    width: 250px;
+    border-radius: 10px;
+  }
+  .one {
+    position: absolute;
+    top: 50%;
+    left: 23.5%;
+  }
+  .one img {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  .two {
+    position: absolute;
+    top: 50%;
+    left: 37.5%;
+  }
+  .two img {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  .three {
+    position: absolute;
+    top: 50%;
+    left: 51.5%;
+  }
+  .three img {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  .four {
+    position: absolute;
+    top: 50%;
+    left: 65.5%;
+  }
+  .four img {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+  }
+  .five {
+    position: absolute;
+    top: 50%;
+    left: 80%;
+  }
+  .five img {
+    height: 150px;
+    width: 200px;
+    border-radius: 10px;
+  }
+

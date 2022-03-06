@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Perfect Clone</title>
+    <style>
+        #container{
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: -5px;
+             align-items: center; 
+             background-color: #2e3035;
+            justify-content:space-around; 
+            
+             
+        }
+        iframe{
+            margin-bottom: 2%; 
+            height: 20rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <link rel="stylesheet" href="./navBar.css">
+</head>
+<body>
+   
+    <nav class="navbar" >
+      <img class="logo"   width="80px" height="40px"src="./navBar/imgur.png" alt="" />
+      <input class="newpost" class="fa fs upload" type="submit" value="New Post" placeholder="New Post" />
+      
+       <div id="searchbar">
+           <div class="final">
+         <input id="search" oninput="debounce(displayMovies, 1000)" type="search" placeholder="Images, #tags, @Users oh my!...">
+         <button type="submit">Search</button>
+         </div>
+         <div id="movies"></div>
+        </div>
+
+      <img class="comment" src="https://img.icons8.com/external-dreamstale-lineal-dreamstale/64/000000/external-badge-badges-symbols-dreamstale-lineal-dreamstale-47.png" alt="" />
+      <input class="login" type="submit" value="Sign in" placeholder="log in" />
+      <input class="signup" type="submit" value="Sign up" placeholder="Sign up" />
+      
+    </nav>
+    <img class="background" width="100%" height="600px"src="./navBar/images.jpg" alt="" />
+    <div class="centered"><h4>Wondrous: inspiring a feeling of wonder or delight; just like Imgur.</h4></div>
+    <div class="left"><h4>EXPLORE TAGS</h4></div>
+    <div class="right"><h4>MORE TAGS +</h4></div>
+    
+    <div class="trending"><img src="images/1.png" alt="" /></div>
+    <div class="one"><img src="images/2.png" alt="" /></div>
+    <div class="two"><img src="images/3.png" alt="" /></div>
+    <div class="three"><img src="images/4.png" alt="" /></div>
+    <div class="four"><img src="images/5.png" alt="" /></div>
+    <div class="five"><img src="images/6.png" alt="" /></div>
+
+    <div id = "container"></div>
+</body>
+<script>
+      let api_key = "7c3d6bd8";
+
+let movies_div = document.getElementById('movies');
+let bomb; 
+async function searchMovies() {
+ try {
+    let name = document.getElementById("search").value;
+    
+    let response = await fetch(`http://www.omdbapi.com/?s=${name}&apikey=${api_key}`);
+
+    let data = await response.json();
+    
+    return data.Search;
+} catch(err) {
+    console.log("err:",err);
+}
+}
+
+async function displayMovies() {
+console.log("Fired after 3 seconds");
+
+    movies_div.innerHTML = null; 
+
+    let movie_data = await searchMovies();
+    
+    if(movie_data === undefined) {
+      
+      return false;
+    }
+    
+    console.log("movie_data:", movie_data);
+
+    movie_data.forEach(function(movie) {
+      let p = document.createElement('p');
+
+      p.innerText = movie.Title;
+      // p.addEventListener("click", function() {
+      //   moviedetails(movile.Title)
+      // })
+
+      movies_div.append(p);
+    });
+}
+
+function debounce (func, delay) {
+
+ clearTimeout(bomb);
+
+ bomb = setTimeout(function() {
+    
+    func();
+
+  }, delay);
+}
+
+</script>
+<script>
+    var cont = document.getElementById("container")
+        let key = "AIzaSyBxUmZ1qHHT1PnuvKBDftJRUSi5cV3I-Tw"
+    let url =`https://youtube.googleapis.com/v3/videos?key=${key}&part=snippet&chart=mostPopular&maxResults=52&regionCode=IN`
+   
+    async function check() {
+            let res = await fetch(url);
+            let data = await res.json();
+            var ans = data.items
+            ans.forEach(element => {
+                console.log(element)
+                show(element.id)
+            });
+        }
+        
+        function show(user){
+            var frame = document.createElement("iframe")
+            frame.src = `https://youtube.com/embed/${user}`
+            cont.appendChild(frame)
+        }
+        check()
+</script>
+</html>
